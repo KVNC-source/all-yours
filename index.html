@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Dearest Clarissa</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="ambient" id="ambient"></div>
+
+    <div class="card">
+      <button class="reward-tab" id="rewardTab">
+        🎟 <span>Your ticket</span>
+      </button>
+
+      <div class="page letter-page" id="letterPage">
+        <div class="top-row">
+          <div class="heart-box">
+            <div
+              class="heart-cluster"
+              id="heartCluster"
+              title="Click to find hearts"
+            >
+              <svg viewBox="0 0 150 140">
+                <defs>
+                  <symbol id="heartShape" viewBox="0 0 100 100">
+                    <path
+                      d="M50 78 C20 55, 8 38, 14 22 C19 8, 38 6, 50 24 C62 6, 81 8, 86 22 C92 38, 80 55, 50 78 Z"
+                    />
+                  </symbol>
+                </defs>
+
+                <circle
+                  class="cluster-dot"
+                  cx="128"
+                  cy="18"
+                  r="2.6"
+                  style="animation-delay: 2.1s, 2.7s"
+                ></circle>
+                <circle
+                  class="cluster-dot"
+                  cx="8"
+                  cy="70"
+                  r="2"
+                  style="animation-delay: 2.3s, 3s"
+                ></circle>
+                <circle
+                  class="cluster-dot"
+                  cx="118"
+                  cy="108"
+                  r="2.2"
+                  style="animation-delay: 2.5s, 2.4s"
+                ></circle>
+
+                <use
+                  href="#heartShape"
+                  class="cluster-heart draw-in idle-float"
+                  id="baseHeart1"
+                  x="18"
+                  y="8"
+                  width="66"
+                  height="66"
+                  style="
+                    animation-delay: 0.4s, 2.3s;
+                    --fdur: 4.8s;
+                    --frot: -6deg;
+                    transform: rotate(-6deg);
+                    transform-origin: 51px 41px;
+                  "
+                ></use>
+
+                <use
+                  href="#heartShape"
+                  class="cluster-heart tint draw-in idle-float"
+                  id="baseHeart2"
+                  x="68"
+                  y="52"
+                  width="46"
+                  height="46"
+                  style="
+                    animation-delay: 1s, 3.4s;
+                    --fdur: 3.9s;
+                    --frot: 10deg;
+                    transform: rotate(10deg);
+                    transform-origin: 91px 75px;
+                  "
+                ></use>
+
+                <use
+                  href="#heartShape"
+                  class="cluster-heart gold-tint draw-in idle-float"
+                  id="baseHeart3"
+                  x="4"
+                  y="86"
+                  width="34"
+                  height="34"
+                  style="
+                    animation-delay: 1.5s, 4.1s;
+                    --fdur: 4.2s;
+                    --frot: -14deg;
+                    transform: rotate(-14deg);
+                    transform-origin: 21px 103px;
+                  "
+                ></use>
+
+                <g id="dynamicHearts"></g>
+              </svg>
+            </div>
+            <span class="hint-bubble" id="hintBubble"
+              ><span class="hint-icon"></span>tap to find hearts</span
+            >
+            <span class="grown-label" id="grownLabel"
+              >+0 more, and counting</span
+            >
+          </div>
+
+          <div class="polaroids">
+            <div class="polaroid back">
+              <img id="imgBack" src="images/us1.jpeg" alt="Our memory" />
+            </div>
+
+            <div class="polaroid front">
+              <img id="imgFront" src="images/us2.jpeg" alt="Our memory" />
+            </div>
+          </div>
+        </div>
+
+        <h1 class="greeting">Dearest Clarissa,</h1>
+
+        <div class="body-text">
+          <p>
+            If there's one thing i never want you to question, it's how deeply i
+            love you. Whether we're cracking up over something ridiculous,
+            teasing each other for no reason at all, or just sitting there doing
+            nothing in particular, i genuinely never get tired of being next to
+            you. My heart picks you, every time, without even trying. i know i
+            don't always have the right words, sometimes i go quiet, and i need
+            you to know that's never a sign my love is fading. It hasn't faded.
+            It hasn't gotten smaller. I choose you again every single day,
+            quietly, even when i'm not saying it out loud.
+          </p>
+
+          <p>
+            This letter is just a small piece of what i mean when i say i'm not
+            going anywhere. i'll love you through the best days, the hardest
+            ones, and all the plain, unremarkable ones in between because that's
+            most of what life actually is, and i want to spend it with you. i'm
+            not going to disappear the moment things get hard. Loving you was
+            never something i only do when it's convenient, it's something i
+            keep choosing, again and again, on purpose. So if you're ever unsure
+            whether what i feel for you has changed, come back to this. It
+            hasn't. It won't. For as long as my heart is beating, it's yours.
+          </p>
+        </div>
+
+        <div class="signoff">
+          <div class="line">With all my love, now and forever,</div>
+          <div class="line name">Your Bany Keefa</div>
+        </div>
+
+        <div class="actions">
+          <button class="action-btn" id="shuffleBtn">Shuffle photos</button>
+          <button class="reward-btn" id="rewardBtn">see your gift</button>
+        </div>
+      </div>
+
+      <div class="page reward-page" id="rewardPage" hidden>
+        <p class="reward-eyebrow">You found all 20 hearts</p>
+        <h2 class="reward-title">A little surprise</h2>
+
+        <div class="ticket">
+          <div class="ticket-main">
+            <p class="ticket-kicker">Admit one · redeemable anytime</p>
+            <p class="ticket-film">Movie Night</p>
+            <p class="ticket-with">
+              with your Bany — your pick, your snacks, your rules
+            </p>
+            <div class="ticket-meta">
+              <div><span>Date</span>Whenever you want ✧</div>
+              <div><span>Seats</span>Two, side by side</div>
+            </div>
+            <p class="ticket-note">
+              No expiry, no conditions. Just say the word.
+            </p>
+          </div>
+          <div class="ticket-stub">
+            <span class="stub-icon">🎬</span>
+            <span class="stub-label">MOVIE NIGHT</span>
+          </div>
+        </div>
+
+        <button class="claim-btn" id="claimBtn">🎟 Claim this ticket</button>
+        <br />
+        <button class="back-link" id="backToLetter">
+          ← back to the letter
+        </button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
